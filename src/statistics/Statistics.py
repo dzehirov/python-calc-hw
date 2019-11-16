@@ -1,4 +1,6 @@
 import math
+import numpy as np
+from scipy.stats import ttest_1samp
 
 from src.statistics.StatisticsAbstract import StatisticsAbstract
 from src.statistics.GetSample import GetSample
@@ -93,6 +95,22 @@ def variance_pop_proportion(number_list):
 
 def p_value(number_list):
     number_list = list(number_list)
+    ttest, pval = ttest_1samp(number_list, population_mean(number_list))
+
+    return pval
+
+
+def proportion(number_list):
+    number_list = list(number_list)
+    p = 0
+    for x in number_list:
+        p = p + x
+
+    n = len(number_list)
+
+    result = p / n
+
+    return result
 
 
 def sample_mean(number_list, sample_size):
@@ -195,13 +213,13 @@ class Statistics(StatisticsAbstract):
         return self.result
 
     def sample_mean(self, sample_size):
-        self.result = sample_mean(number_list, sample_size)
+        self.result = sample_mean(sample_size)
         return self.result
 
     def sample_standard_deviation(self, sample_size):
-        self.result = sample_standard_deviation(number_list, sample_size)
+        self.result = sample_standard_deviation(sample_size)
         return self.result
 
     def variance_sample_proportion(self, sample_size):
-        self.result = variance_sample_proportion(number_list, sample_size)
+        self.result = variance_sample_proportion(sample_size)
         return self.result
