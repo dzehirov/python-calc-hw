@@ -1,6 +1,4 @@
 import math
-import numpy as np
-from scipy.stats import ttest_1samp
 
 from src.statistics.StatisticsAbstract import StatisticsAbstract
 from src.statistics.GetSample import GetSample
@@ -95,7 +93,7 @@ def variance_pop_proportion(number_list):
 
 def p_value(number_list):
     number_list = list(number_list)
-    ttest, pval = ttest_1samp(number_list, population_mean(number_list))
+    ttest, pval = ttest(number_list, population_mean(number_list))
 
     return pval
 
@@ -189,20 +187,25 @@ class Statistics(StatisticsAbstract):
         self.result = variance_pop_proportion(number_list)
         return self.result
 
-    def zscore(self):
-        pass
+    def zscore(self, number_list):
+        self.result = zscore(number_list)
+        return self.result
 
-    def standardized_score(self):
-        pass
+    def standardized_score(self, number_list):
+        self.result = standardized_score(number_list)
+        return self.result
 
-    def population_corre_coefficient(self):
-        pass
+    def population_corre_coefficient(self, number_list):
+        self.result = population_corre_coefficient(number_list)
+        return self.result
 
-    def confidence_interval(self):
-        pass
+    def confidence_interval(self, number_list):
+        self.result = confidence_interval(number_list)
+        return self.result
 
-    def population_variance(self):
-        pass
+    def population_variance(self, number_list):
+        self.result = population_variance(number_list)
+        return self.result
 
     def p_value(self, number_list):
         self.result = p_value(number_list)

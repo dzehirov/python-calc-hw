@@ -25,20 +25,35 @@ def variance_pop_proportion(number_list):
     return stat.variance_pop_proportion(number_list)
 
 
+def zscore(number_list):
+    return stat.zscore(number_list)
+
+def standardized_score(number_list):
+    return stat.standardized_score(number_list)
+
+def population_corre_coefficient(number_list):
+    return stat.population_corre_coefficient(number_list)
+
+def confidence_interval(number_list):
+    return stat.confidence_interval(number_list)
+
+def population_variance(number_list):
+    return stat.population_variance(number_list)
+
 def p_value(number_list):
     return stat.p_value(number_list)
 
 def proportion(number_list):
     return stat.proportion(number_list)
 
-def sample_mean(number_list):
-    return stat.sample_mean(number_list)
+def sample_mean(sample_size):
+    return stat.sample_mean(sample_size)
 
-def sample_standard_deviation(number_list):
-    return stat.sample_standard_deviation(number_list)
+def sample_standard_deviation(sample_size):
+    return stat.sample_standard_deviation(sample_size)
 
-def variance_sample_proportion(number_list):
-    return stat.variance_sample_proportion(number_list)
+def variance_sample_proportion(sample_size):
+    return stat.variance_sample_proportion(sample_size)
 
 
 # add (return the value of the sum of num1 and num2)
@@ -102,6 +117,25 @@ class Calculator:
         self.value = variance_pop_proportion(number_list)
         return self.value
 
+    def zscore(self, number_list):
+        self.value = zscore(number_list)
+        return self.value
+
+    def standardized_score(self, number_list):
+        self.value = standardized_score(number_list)
+        return self.value
+
+    def population_corre_coefficient(self, number_list):
+        self.value = population_corre_coefficient(number_list)
+        return self.value
+
+    def confidence_interval(self, number_list):
+        self.value = confidence_interval(number_list)
+        return self.value
+
+    def population_variance(self, number_list):
+        self.value = population_variance(number_list)
+        return self.value
 
     def p_value(self, number_list):
         self.value = p_value(number_list)
@@ -111,16 +145,16 @@ class Calculator:
         self.value = proportion(number_list)
         return self.value
 
-    def sample_mean(self, number_list):
-        self.value = sample_mean(number_list)
+    def sample_mean(self, sample_size):
+        self.value = sample_mean(sample_size)
         return self.value
 
-    def sample_standard_deviation(self, number_list):
-        self.value = sample_standard_deviation(number_list)
+    def sample_standard_deviation(self, sample_size):
+        self.value = sample_standard_deviation(sample_size)
         return self.value
 
-    def variance_sample_proportion(self, number_list):
-        self.value = variance_sample_proportion(number_list)
+    def variance_sample_proportion(self, sample_size):
+        self.value = variance_sample_proportion(sample_size)
         return self.value
 
 

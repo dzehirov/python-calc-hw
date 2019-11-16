@@ -4,9 +4,9 @@ import math
 
 from decimal import Decimal
 
-from Calculator.Calculator import Calculator
+from src.Calculator import Calculator
 
-from CsvReader.CsvReader import CsvReader
+from src.csv.CsvReader import CsvReader
 
 
 
@@ -69,8 +69,6 @@ class MyTestCase(unittest.TestCase):
                 Decimal(row['Result']).quantize(Decimal('.001')))
 
             self.assertEqual(self.calculator.result, Decimal(row['Result']).quantize(Decimal('.001')))
-
-
 
 
 
