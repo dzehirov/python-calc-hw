@@ -1,6 +1,6 @@
 import unittest
 from pprint import pprint
-from Calculator import Calculator
+from src import Calculator
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
