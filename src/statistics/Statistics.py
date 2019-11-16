@@ -1,4 +1,6 @@
 import math
+import numpy as np
+from scipy.stats import ttest_1samp
 
 from src.statistics.StatisticsAbstract import StatisticsAbstract
 from src.statistics.GetSample import GetSample
@@ -93,6 +95,9 @@ def variance_pop_proportion(number_list):
 
 def p_value(number_list):
     number_list = list(number_list)
+    ttest, pval = ttest_1samp(number_list, population_mean(number_list))
+
+    return pval
 
 
 def proportion(number_list):
